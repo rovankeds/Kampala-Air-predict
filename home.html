@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Quality Prediction</title>
+    <link rel="icon" href="img/logo.jpg" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 10px auto;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .menu-container {
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.8); /* Optional: to make text more readable */
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+        }
+
+        .title-container {
+            text-align: center;
+            padding: 50px;
+            background-image: url('img/cloudy-background.png');
+            margin-top: 80px;
+            color: white;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #555;
+            margin-top: 40px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .menu-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .menu-button .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: white;
+            transition: 0.4s;
+        }
+
+        .menu-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            top: 60px; /* Adjust according to your layout */
+            left: 20px;
+        }
+
+        .menu-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .menu-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .images {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .images img {
+            max-width: 200px;
+            margin: 0 10px;
+        }
+
+        .documents {
+            margin-top: 40px;
+            font-size: large;
+            display: contents;
+            flex: 2;
+            justify-content: center;
+            align-items: center;
+            margin-left: 50%;
+            margin-right: 50%;
+        }
+
+        .documents a {
+            display: block;
+            margin: 10px 0;
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .documents a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            flex: 1;
+        }
+
+        .y2 {
+            background-color: ghostwhite;
+        }
+
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .footer a {
+            color: #FFD700;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="menu-container">
+        <button class="menu-button" onclick="toggleMenu()">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <div id="menu" class="menu-content">
+            <a href="#home">Home</a>
+            <a href="shawn.html">Kikule Shawn</a>
+            <a href="suzan.html">Nowamagyezi Suzan</a>
+            <a href="kiden.html">Kiden Yenki</a>
+        </div>
+    </div>
+
+    <div class="title-container">
+        <h1 style="color: white;">Kampala Air Quality Prediction</h1>
+    </div>
+
+    <div class="container">
+           <h2 style="background-color: #4CAF50;">Introduction</h2>
+           <p>
+            Welcome to the official site of the Kampala Air-Predict (KAP) app! Our innovative project aims to provide real-time air quality predictions for various parts of Kampala using the power of Image Analysis and Machine Learning. By simply uploading a picture or taking a picture using a camera, you can instantly get an accurate Air Quality Index (AQI) reading for your location. Our mission is to improve public health, reduce economic costs, and raise environmental awareness in Kampala.
+           </p>
+        
+
+        <h2 style="background-color: #4CAF50;">Overview</h2>
+        <p>
+            Kampala Air-Predict is designed to make air quality monitoring accessible and convenient for everyone. Using advanced Computer Vision and Machine Learning technologies, our web application analyzes images to predict air quality levels. Trained on hundreds of images from around Kampala, our model delivers reliable predictions, helping you make informed decisions about your daily activities to minimize exposure to air pollution.
+        </p>
+        <div class="y2">
+        <h2 style="background-color: #4CAF50;">How it works</h2>
+
+        <h3>Image Capture or Upload</h3>
+        <p>
+            Use your device’s camera to take a picture or upload an existing image.
+        </p>
+        <div class="images">
+            <img src="img/login.jpg" alt="login"> 
+        </div>
+
+        <h3>Preprocessing</h3>
+        <p>The uploaded image is preprocessed to ensure it meets the standards required for accurate analysis.</p>
+
+        <h3>Prediction</h3>
+        <p>Our machine learning model, trained on images labeled with known air quality readings, analyzes the image and predicts the AQI.</p>
+
+        <h3>Result Display</h3>
+        <p>The predicted air quality information is displayed on your screen, providing insights into the air quality based on the uploaded image.</p>
+        <div class="images">
+            <img src="img/result.jpg" alt="login"> 
+        </div>
+       </div>
+        <h2 style="background-color: #4CAF50;">Our Technology</h2>
+        <p>
+            Kampala Air-Predict uses a robust client-server architecture to deliver its services. The front end of our web application is built with HTML, CSS, and JavaScript within the Django framework, ensuring a responsive and interactive user experience. The backend processes images and delivers AQI predictions using a sophisticated machine learning model. This architecture not only separates the user interface from the backend services but also distributes processing loads efficiently, ensuring scalability and reliability.
+        </p>
+
+        <h2 style="background-color: #4CAF50;">Data and Privacy</h2>
+        <p>
+            Your privacy is our priority. The images you upload and your personal data are securely stored in our database. Only authenticated users can access the system, ensuring your data is protected. The database holds user authentication details, image data, and prediction results, which are used solely for providing you with accurate air quality information.
+        </p>
+        <div class="images">
+            <img src="img/image1.jpg" alt="login"> 
+        </div>
+
+
+        <div class="documents">
+            <a href="https://drive.google.com/drive/folders/1--KjXes4pg0ql_WgwVf_WK1mWX27CD3S" target="_blank">Project Documents</a> 
+            <a href="https://github.com/suzan256/BSSE24-22.git" target="_blank">Github Repository</a>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 Kampala Air-Predict. All rights reserved. | <a href="#">BSE24-22</a> | <a href="#">COCIS - MAK</a></p>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            if (menu.style.display === "block") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "block";
+            }
+        }
+
+        // Close the menu if the user clicks outside of it
+        window.onclick = function(event) {
+            if (!event.target.matches('.menu-button')) {
+                var menus = document.getElementsByClassName("menu-content");
+                for (var i = 0; i < menus.length; i++) {
+                    var openMenu = menus[i];
+                    if (openMenu.style.display === "block") {
+                        openMenu.style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
